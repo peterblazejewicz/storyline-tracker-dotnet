@@ -1,0 +1,29 @@
+{
+  "name": "storyline-tracker-client",
+  "description": "Storyline Tracker application",
+  "main": "",
+  "authors": [
+    "@peterblazejewicz"
+  ],
+  "license": "Unlicense",
+  "keywords": [
+    "Storyline",
+    "Tracker",
+    "Angular",
+    "2",
+    "Dotnet"
+  ],
+  "homepage": "https://github.com/peterblazejewicz/storyline-tracker-dotnet",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "^1.1.3"
+  }
+}
