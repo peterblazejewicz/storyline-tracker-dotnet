@@ -1,0 +1,6 @@
+{
+  "applicationName": "Storyline Tracker",
+  "environment": "Development",
+  "server.urls": "http://+:5000",
+  "webroot": "dist"
+}
