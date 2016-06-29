@@ -14,10 +14,11 @@ namespace StorylineTracker.Client
         public static void Main(string[] args)
         {
             var config = new ConfigurationBuilder()
-                .AddCommandLine(args)
-                .AddEnvironmentVariables(prefix: "ASPNETCORE_")
-                .Build();
-            
+              .SetBasePath(Directory.GetCurrentDirectory())
+              .AddJsonFile("hosting.json", optional: false)
+              .AddEnvironmentVariables(prefix: "ASPNETCORE_")
+              .AddCommandLine(args)
+              .Build();
             var host = new WebHostBuilder()
                 .UseConfiguration(config)
                 .UseKestrel()
@@ -25,7 +26,6 @@ namespace StorylineTracker.Client
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
-
             host.Run();
         }
     }
