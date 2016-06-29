@@ -240,8 +240,8 @@ _Pvt_Extensions
 /tmp
 
 # dependencies
-/node_modules
-/bower_components
+node_modules
+bower_components
 
 # IDEs and editors
 /.idea
@@ -257,7 +257,7 @@ _Pvt_Extensions
 /libpeerconnection.log
 npm-debug.log
 testem.log
-/typings
+typings
 
 # e2e
 /e2e/*.js
