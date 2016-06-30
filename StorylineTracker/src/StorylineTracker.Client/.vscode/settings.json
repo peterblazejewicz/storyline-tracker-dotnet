@@ -4,6 +4,8 @@
         "**/.svn": true,
         "**/.DS_Store": true,
         "**/bin": true,
-        "**/obj": true
+        "**/obj": true,
+        "**/tmp": true,
+        "**/typings": true
     }
 }
