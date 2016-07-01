@@ -21,4 +21,7 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     componentHandler.upgradeDom();
   }
+
+  resetDb(e: Event) {
+  }
 }
