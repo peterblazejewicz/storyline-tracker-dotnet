@@ -42,10 +42,12 @@
     "compile": {
       "exclude": [
         "config",
+        "dist",
         "e2e",
-        "public",
         "node_modules",
+        "public",
         "src",
+        "tmp",
         "typings"
       ]
     },
