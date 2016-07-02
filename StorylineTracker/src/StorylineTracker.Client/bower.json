@@ -22,8 +22,5 @@
     "public/bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "material-design-lite": "^1.1.3"
-  }
+  ]
 }

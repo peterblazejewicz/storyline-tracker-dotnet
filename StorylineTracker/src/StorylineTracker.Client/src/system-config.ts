@@ -7,10 +7,15 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'mdl': 'vendor/material-design-lite/dist/material.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'mdl': {
+    format: 'global',
+    defaultExtension: 'js'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,6 +34,7 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  'mdl',
 
   // App specific barrels.
   'app',
@@ -52,6 +58,7 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    'mdl': 'vendor/material-design-lite',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages

@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import * as mdl from 'mdl';
 
-declare var componentHandler: any;
 @Component({
   moduleId: module.id,
   selector: 'app-root',
@@ -19,7 +19,7 @@ export class AppComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit() {
-    componentHandler.upgradeDom();
+    mdl.componentHandler.upgradeDom()
   }
 
   resetDb(e: Event) {

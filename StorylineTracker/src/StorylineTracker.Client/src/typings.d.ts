@@ -4,3 +4,8 @@
 
 /// <reference path="../typings/browser.d.ts" />
 declare var module: { id: string };
+
+declare module 'mdl' {
+    var saveAs: any;
+    export = saveAs;
+}
