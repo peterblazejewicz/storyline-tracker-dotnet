@@ -1,9 +1,10 @@
-using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using StorylineTracker.Service.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,36 +19,45 @@ namespace StorylineTracker.Service.Controllers
             HostingEnvironment = env;
         }
 
-        // GET api/values
+        // GET api/characters
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            if(this.Characters != null) {
+                return Ok(this.Characters);
+            }
+            return NotFound();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/characters/5
+        [HttpGet("{id:int}")]
+        public IActionResult Get(int id)
         {
-            return "value";
+            if(this.Characters != null) 
+            {
+                Character character = this.Characters
+                    .Where(ch => ch.Id == id).FirstOrDefault();
+                if(character != null) return Ok(character);
+            }
+            return NotFound();
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
+        public IEnumerable<Character> Characters
         {
+            get
+            {
+                if (_characters != null) return _characters;
+                var path = Path.Combine(HostingEnvironment.WebRootPath, "data", "characters.json");
+                using (StreamReader file = System.IO.File.OpenText(path))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    CharactersData d = (CharactersData)serializer.Deserialize(file, typeof(CharactersData));
+                    _characters = (d != null) ? d.Data : null;
+                }
+                return _characters;
+            }
         }
+        private IEnumerable<Character> _characters;
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
