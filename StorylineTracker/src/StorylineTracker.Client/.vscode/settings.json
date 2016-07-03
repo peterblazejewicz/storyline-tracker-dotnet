@@ -6,6 +6,7 @@
         "**/bin": true,
         "**/obj": true,
         "**/tmp": true,
-        "**/typings": true
+        "**/typings": true,
+        "**/project.lock.json": true
     }
 }
