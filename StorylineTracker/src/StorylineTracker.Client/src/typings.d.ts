@@ -9,3 +9,8 @@ declare module 'mdl' {
     var saveAs: any;
     export = saveAs;
 }
+
+declare module 'dialogPolyfill' {
+  var saveAs: any;
+  export = saveAs;
+}

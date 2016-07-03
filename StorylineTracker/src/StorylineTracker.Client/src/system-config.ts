@@ -7,7 +7,8 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'mdl': 'vendor/material-design-lite/dist/material.js'
+  'mdl': 'vendor/material-design-lite/dist/material.js',
+  'dialogPolyfill': 'vendor/dialog-polyfill/dialog-polyfill.js'
 };
 
 /** User packages configuration. */
@@ -35,6 +36,7 @@ const barrels: string[] = [
   // Thirdparty barrels.
   'rxjs',
   'mdl',
+  'dialogPolyfill',
 
   // App specific barrels.
   'app',
