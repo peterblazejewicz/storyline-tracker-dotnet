@@ -16,7 +16,7 @@ module.exports = function(defaults) {
       'reflect-metadata/**/*.+(ts|js|js.map)',
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)',
-      'material-design-lite/dist/material.+(css|min.css|css.map|js|js.map)',
+      'material-design-lite/dist/*.+(css|min.css|css.map|js|js.map)',
       'material-design-icons/iconfont/**',
       'dialog-polyfill/dialog-polyfill.+(css|js)'
     ]
