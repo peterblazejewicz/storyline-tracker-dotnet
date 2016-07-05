@@ -7,7 +7,7 @@
     </div>
     <!-- Tabs -->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a *ngFor="let menuItem of menuItems" class="mdl-layout__tab" [routerLink]="menuItem.link">{{menuItem.caption}}</a>
+      <a *ngFor="let menuItem of menuItems" class="mdl-layout__tab" [routerLink]="menuItem.link" [routerLinkActive]="['is-active']">{{menuItem.caption}}</a>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Accent-colored raised button with ripple -->
@@ -19,7 +19,7 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">{{title}}</span>
     <nav class="mdl-navigation">
-      <a *ngFor="let menuItem of menuItems" class="mdl-navigation__link" [routerLink]="menuItem.link">{{menuItem.caption}}</a>
+      <a *ngFor="let menuItem of menuItems" class="mdl-navigation__link" [routerLink]="menuItem.link" [routerLinkActive]="['is-active']">{{menuItem.caption}}</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
