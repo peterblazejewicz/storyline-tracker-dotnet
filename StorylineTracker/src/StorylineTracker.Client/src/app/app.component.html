@@ -1,20 +1,19 @@
-<!-- Always shows a header, even in smaller screens. -->
+<!-- Simple header with scrollable tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header is-casting-shadow">
+  <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title">{{title}}</span>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a *ngFor="let menuItem of menuItems" class="mdl-navigation__link" [routerLink]="menuItem.link">{{menuItem.caption}}</a>
-      </nav>
+    </div>
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a *ngFor="let menuItem of menuItems" class="mdl-layout__tab" [routerLink]="menuItem.link">{{menuItem.caption}}</a>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Accent-colored raised button with ripple -->
-      <button (click)="resetDb($event)"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      <button (click)="resetDb($event)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
         Reset DB
       </button>
-      <!-- Colored FAB button -->
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -29,4 +28,5 @@
     </div>
   </main>
 </div>
+
 <app-modal></app-modal>
